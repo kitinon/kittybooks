@@ -38,7 +38,8 @@
     font-size: 11.5pt
   }
   
-  .bookinfo > nobr {
+  .bookinfo > span {
+    white-space: nowrap;
     margin-right: 10px;
     color: gray
   }
@@ -61,25 +62,12 @@
              alt={book.title} title={book.title}>
       </div>
       <div class="bookinfo">
-        <span class="booktitle"><b>{book.title}</b></span>
-        <nobr>บาร์โค้ด</nobr>{book.id}
-        <nobr>สำนักพิมพ์</nobr>{book.publisher}
-        <nobr>ผู้เขียน</nobr>{book.author}
-        <nobr>ราคา</nobr>{book.price} บาท
+        <div class="booktitle"><b>{book.title}</b></div>
+        <span>บาร์โค้ด</span>{book.id}
+        <span>สำนักพิมพ์</span>{book.publisher}
+        <span>ผู้เขียน</span>{book.author}
+        <span>ราคา</span>{book.price} บาท
       </div>            
     </div>
   {/each}
 </div>
-<!--
-.bookshelf {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-    grid-gap: 32px;
-    grid-auto-flow: dense;
-}
-.bookshelf {
-  display: flex;
-  flex-wrap: wrap;
-  background-color: darkgray
-}
--->
