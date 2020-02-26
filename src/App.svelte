@@ -18,7 +18,13 @@
     grid-gap: 32px;
     grid-auto-flow: dense
   }
-
+  /* Single column display for phones */
+  @media (max-width: 459px) {
+    .bookshelf {
+      display: flex;
+      flex-direction: column
+    }
+  }
   .bookholder {
     display: flex;
     justify-content: flex-start
