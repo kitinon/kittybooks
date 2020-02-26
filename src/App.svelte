@@ -1,5 +1,6 @@
 <script>
   import books from './bookdata.js'
+  import Books from './components/Book.svelte';
 </script>
 
 <style>
@@ -63,19 +64,5 @@
   <h1>ร้านคิตตี้บุ๊ค</h1>
 </div>
 <div class="bookshelf">
-  {#each books as book}
-    <div class="bookholder">
-      <div class="bookimage">
-        <img src={`/images/${book.id}.jpg`}
-             alt={book.title} title={book.title}>
-      </div>
-      <div class="bookinfo">
-        <div class="booktitle"><b>{book.title}</b></div>
-        <span>บาร์โค้ด</span>{book.id}
-        <span>สำนักพิมพ์</span>{book.publisher}
-        <span>ผู้เขียน</span>{book.author}
-        <span>ราคา</span>{book.price} บาท
-      </div>            
-    </div>
-  {/each}
+  <Books {books} />
 </div>
