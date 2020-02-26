@@ -15,9 +15,9 @@
   .bookshelf {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-    grid-gap: 32px;
     grid-auto-flow: dense
   }
+
   /* Single column display for phones */
   @media (max-width: 459px) {
     .bookshelf {
@@ -25,9 +25,11 @@
       flex-direction: column
     }
   }
+
   .bookholder {
     display: flex;
-    justify-content: flex-start
+    justify-content: flex-start;
+    margin: 1% 2% 5% 1%
   }
 
   .bookimage {
