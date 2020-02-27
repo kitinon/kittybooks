@@ -5,11 +5,39 @@
 <style>
   .storetitle {
     display: flex;
-    margin-bottom: 20px
+    margin-bottom: 20px;
+    justify-content: space-between;
+  }
+  /* Single column display for phones */
+  @media (max-width: 459px) {
+    .storetitle {
+      display: flex;
+      flex-direction: column
+    }
   }
 
-  .storetitle > img {
-    height: 80px;
+  .storelogo {
+    display: flex;
+    height: 80px
+  }
+
+  .storelogo > img {
+    height: 100%;
+    width: auto
+  }
+
+  .booksearch {
+    display: flex;
+    justify-content: center;
+    align-items: center
+  }
+  .booksearch > input {
+    width: 320px
+  }
+  @media (max-width: 459px) {
+    .booksearch {
+      margin-top: 20px;
+    }
   }
 
   .bookshelf {
@@ -59,8 +87,14 @@
 </style>
 
 <div class="storetitle">
-  <img src="/images/kitty.jpg" alt="kitty logo">
-  <h1>ร้านคิตตี้บุ๊ค</h1>
+  <div class="storelogo">
+    <img src="/images/kitty.jpg" alt="kitty logo">
+    <h1>ร้านคิตตี้บุ๊ค</h1>
+  </div>
+  <div class="booksearch">
+    <input type="search" id="search" name="search">
+    <button><i class="fas fa-search fa-lg" aria-hidden="true"></i></button>
+  </div>
 </div>
 <div class="bookshelf">
   {#each books as book}
