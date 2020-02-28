@@ -2,6 +2,28 @@
   import books from './bookdata.js'
 </script>
 
+<div class="storetitle">
+  <img src="/images/kitty.jpg" alt="kitty logo">
+  <h1>ร้านคิตตี้บุ๊ค</h1>
+</div>
+<div class="bookshelf">
+  {#each books as book}
+    <div class="bookholder">
+      <div class="bookimage">
+        <img src={`/images/${book.id}.jpg`}
+             alt={book.title} title={book.title}>
+      </div>
+      <div class="bookinfo">
+        <div class="booktitle"><b>{book.title}</b></div>
+        <span>บาร์โค้ด</span>{book.id}
+        <span>สำนักพิมพ์</span>{book.publisher}
+        <span>ผู้เขียน</span>{book.author}
+        <span>ราคา</span>{book.price} บาท
+      </div>            
+    </div>
+  {/each}
+</div>
+
 <style>
   .storetitle {
     display: flex;
@@ -57,25 +79,3 @@
     margin-bottom: 5px
   }
 </style>
-
-<div class="storetitle">
-  <img src="/images/kitty.jpg" alt="kitty logo">
-  <h1>ร้านคิตตี้บุ๊ค</h1>
-</div>
-<div class="bookshelf">
-  {#each books as book}
-    <div class="bookholder">
-      <div class="bookimage">
-        <img src={`/images/${book.id}.jpg`}
-             alt={book.title} title={book.title}>
-      </div>
-      <div class="bookinfo">
-        <div class="booktitle"><b>{book.title}</b></div>
-        <span>บาร์โค้ด</span>{book.id}
-        <span>สำนักพิมพ์</span>{book.publisher}
-        <span>ผู้เขียน</span>{book.author}
-        <span>ราคา</span>{book.price} บาท
-      </div>            
-    </div>
-  {/each}
-</div>
