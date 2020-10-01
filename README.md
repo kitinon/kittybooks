@@ -13,6 +13,15 @@ npx degit sveltejs/template svelte-app
 cd svelte-app
 ```
 
+or install via snowpack template
+
+```bash
+npm install --save-dev snowpack
+
+// snowpack.config.json
+"plugins": ["@snowpack/plugin-svelte"]
+```
+
 *Note that you will need to have [Node.js](https://nodejs.org) installed.*
 
 
